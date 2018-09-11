@@ -1,0 +1,12 @@
+to commit your changes:
+right click in folder > "Git Bash"
+type in the terminal:
+git commit -am "short description of what you added/changed/etc"
+git push
+
+to revert your changes (warning: this is permanent):
+git reset --hard
+
+to add a file that isn't already on github:
+git add <file> (type the first few letters and hit tab, that usually works)
+then commit it with the above instructions
