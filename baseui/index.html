@@ -4,31 +4,31 @@
     <meta charset="UTF-8">
     <title>GSU Validator</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-	<link rel="stylesheet" href="styles.css"> 
-	<script>
-		function drag_handler(ev) {
-		 console.log("Drag");
-		}
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      function drag_handler(ev) {
+        console.log("Drag");
+      }
 
-		function dragstart_handler(ev) {
-		 console.log("dragStart");
-		 ev.dataTransfer.setData("text", ev.target.id);
-		}
+      function dragstart_handler(ev) {
+        console.log("dragStart");
+        ev.dataTransfer.setData("text", ev.target.id);
+      }
 
-		function drop_handler(ev) {
-		 console.log("Drop");
-		 ev.currentTarget.style.background = "lightyellow";
+      function drop_handler(ev) {
+        console.log("Drop");
+        ev.currentTarget.style.background = "lightyellow";
 
-		 ev.preventDefault();
-		 var data = ev.dataTransfer.getData("text");
-		 ev.target.appendChild(document.getElementById(data));
-		}
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+      }
 
-		function dragover_handler(ev) {
-		 console.log("dragOver");
-		 ev.preventDefault();
-		}
-	</script>
+      function dragover_handler(ev) {
+        console.log("dragOver");
+        ev.preventDefault();
+      }
+    </script>
   </head>
   <body>
     <div class="container-fluid maindiv">
@@ -39,29 +39,29 @@
       </div>
       <br>
       <div class="row">
-       
+
         <div class="container-fluid ">
-          
-		  <div class="m-3 p-3 results" id="target" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-			<p class="text-center">Drag your files here</p>
-		  </div>
-		  
-		  <br>
-		  
-		  <div class="m-3 p-3 row flex-row flex-nowrap slideshow">
-            <div class="m-3 p-3 border shadow col-2 slide"></div>
-            <div class="m-3 p-3 border shadow col-2 slide"></div>
-            <div class="m-3 p-3 border shadow col-2 slide"></div>
-            <div class="m-3 p-3 border shadow col-2 slide"></div>
-            <div class="m-3 p-3 border shadow col-2 slide"></div>
-			<div class="m-3 p-3 border shadow col-2 slide"></div>
-			<div class="m-3 p-3 border shadow col-2 slide"></div>
-			<div> </div>
+
+          <div class="m-3 p-3 results" id="target" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+            <p class="text-center">Drag your files here</p>
           </div>
-		  
+
+          <br>
+
+          <div class="m-3 p-3 row flex-row flex-nowrap slideshow">
+            <div class="m-3 p-3 border shadow col-2 slide"></div>
+            <div class="m-3 p-3 border shadow col-2 slide"></div>
+            <div class="m-3 p-3 border shadow col-2 slide"></div>
+            <div class="m-3 p-3 border shadow col-2 slide"></div>
+            <div class="m-3 p-3 border shadow col-2 slide"></div>
+            <div class="m-3 p-3 border shadow col-2 slide"></div>
+            <div class="m-3 p-3 border shadow col-2 slide"></div>
+            <div> </div>
+          </div>
+
         </div>
       </div>
-		<br>
+      <br>
       <div class="row">
         <div class="col footer">
           <p class="text-center">Copyright &copy; GSU, 2018. Created by Web Validation capstone group.</p>
