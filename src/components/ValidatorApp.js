@@ -6,21 +6,20 @@ import '../index.css'
 // components
 import Header from './Header'
 import Footer from './Footer'
-import Dropzone from './Dropzone'
-import DropzoneLandingPage from './DropzoneLandingPage'
+import ValidationDropzone from './ValidationDropzone'
 import { Slideshow, Slide } from './Slideshow'
 
 // main component
 class ValidatorApp extends Component {
   render () {
     return (
-      <div class='container-fluid maindiv'>
+      <div className='container-fluid maindiv'>
         <Header />
         <br />
-        <div class='row'>
-          <Dropzone>
-            <DropzoneLandingPage />
-          </Dropzone>
+        <div className='row'>
+          <div className='container-fluid'>
+            <ValidationDropzone />
+          </div>
         </div>
         <br />
         <Slideshow>
