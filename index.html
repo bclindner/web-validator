@@ -34,7 +34,7 @@
     <div class="container-fluid maindiv">
       <div class="row">
         <div class="col header">
-          <h1 class="text-center ">GSU Validator</h1>
+          <h1 class="m-1 p-1 text-center ">GSU Validator</h1>
         </div>
       </div>
       <br>
@@ -43,13 +43,14 @@
         <div class="container-fluid ">
           
 		  <div class="m-3 p-3 results" id="target" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-			<p class="text-center">Drag your files here</p>
-		  </div>
+			<div class= "m-3 p-3 displayErrors"><b><small>Line: 50</small> <br/>Error: Open bracket</b><br/></div> 
+			<div class= "m-3 p-3 displayWarnings"><b><small>Line: 24</small> <br/>Warning: Lowercase letter</b><br/></div>			
+		  		  </div>
 		  
 		  <br>
 		  
 		  <div class="m-3 p-3 flex-nowrap row slideshow">
-			<div class="m-3 p-3 shadow slide testnewslide text-center"><h3 class="error"> New<br>File</h3></div>
+			<div class="m-3 p-3 shadow slide newslide text-center"><h3 class="error"></h3> <img src="newbutton.png" class="center align-middle"></div>
             <div class="m-3 p-3 shadow slide defaultSlide text-center selected"><div class="fileinfo"><h3 class="error">0<br>Errors</h3><h6 class="filename">Index.html <br>Uploaded: Time</h6></div></div>
             <div class="m-3 p-3 shadow slide warningSlide text-center"><div class="fileinfo"><h3 class="error"> 20<br>Warnings</h3><h6 class="filename">Index.html <br>Uploaded: Time</h6></div></div>
             <div class="m-3 p-3 shadow slide errorSlide text-center"><div class="fileinfo"><h3 class="error"> 234<br>Errors</h3><h6 class="filename">Index.html <br>Uploaded: Time</h6></div></div>
@@ -65,10 +66,9 @@
 		<br>
       <div class="row">
         <div class="col footer">
-          <p class="text-center">Copyright &copy; GSU, 2018. Created by Web Validation capstone group.</p>
+          <p class="text-center m-1 p-1">Copyright &copy; GSU, 2018. Created by Web Validation capstone group.</p>
         </div>
       </div>
     </div>
   </body>
 </html>
-
