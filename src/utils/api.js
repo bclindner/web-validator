@@ -3,7 +3,7 @@ import config from './config.json'
 // Main validator function
 export async function validate (file) {
   const data = await readFile(file)
-  let validation = {}
+  let validation = 'invalid'
   switch (file.type) {
     case 'text/html':
       validation = await validateHTML(data)
@@ -14,7 +14,7 @@ export async function validate (file) {
     default:
       break
   }
-  console.log(validation)
+  return validation
 }
 
 // Validator functions
