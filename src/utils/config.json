@@ -1,0 +1,8 @@
+{
+  "html": {
+    "endpoint": "https://validator.w3.org/nu/?out=json"
+  },
+  "css": {
+    "endpoint": "https://jigsaw.w3.org/css-validator/validator/"
+  }
+}
