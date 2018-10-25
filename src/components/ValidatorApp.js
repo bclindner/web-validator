@@ -7,13 +7,14 @@ import '../index.css'
 import Header from './Header'
 import Footer from './Footer'
 import ValidationDropzone from './ValidationDropzone'
-import { Slideshow, Slide } from './Slideshow'
+import { Slideshow } from './Slideshow'
+import { DefaultSlide, ErrorSlide, NewSlide, WarningSlide } from './ValidationSlides'
 
 // main component
 class ValidatorApp extends Component {
   render () {
     return (
-      <div className='container-fluid maindiv'>
+      <div className='container-fluid'>
         <Header />
         <br />
         <div className='row'>
@@ -23,11 +24,11 @@ class ValidatorApp extends Component {
         </div>
         <br />
         <Slideshow>
-          <Slide />
-          <Slide />
-          <Slide />
-          <Slide />
-          <Slide />
+          <NewSlide />
+          <DefaultSlide />
+          <ErrorSlide />
+          <WarningSlide />
+          <div className='paddiv' />
         </Slideshow>
         <Footer />
       </div>
