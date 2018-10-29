@@ -16,8 +16,10 @@ import { validate } from '../utils/api.js'
 class ValidatorApp extends Component {
   constructor (props) {
     super(props)
+    this.selectValidation = this.selectValidation.bind(this)
     this.onDrop = this.onDrop.bind(this)
     this.state = {
+      selected: -1,
       validations: []
     }
   }
@@ -28,7 +30,6 @@ class ValidatorApp extends Component {
     for (let file of event.dataTransfer.files) {
       // validate the file
       const errors = await validate(file)
-      console.log(errors)
       if (errors !== false) {
         // determine if this is an errored, warning, or ok validation
         let type = 'ok'
@@ -49,27 +50,36 @@ class ValidatorApp extends Component {
             errors: errors,
             uploadTime: new Date().toLocaleTimeString()
           })
+          state.selected = state.validations.length - 1
           return (state, props)
         })
       }
     }
   }
+  async selectValidation(key) {
+    console.log("setting validation to "+key)
+    return this.setState({selected: key})
+  }
   render () {
     return (
-      <div className='container-fluid'>
-        <Header />
-        <br />
-        <div className='row'>
-          <div className='container-fluid'>
-            <Dropzone onDragEnter={this.onDragEnter} onDrop={this.onDrop}>
-              <DropzoneLandingPage />
-            </Dropzone>
+      <Dropzone onDragEnter={this.onDragEnter} onDrop={this.onDrop}>
+        <div className='container-fluid'>
+          <Header />
+          <br />
+          <div className='row'>
+            <div className='container-fluid'>
+                <DropzoneLandingPage />
+            </div>
           </div>
+          <br />
+          <ValidationSlideshow 
+            validations={this.state.validations}
+            selected={this.state.selected}
+            selectFunction={this.selectValidation}
+          />
+          <Footer />
         </div>
-        <br />
-        <ValidationSlideshow validations={this.state.validations} />
-        <Footer />
-      </div>
+      </Dropzone>
     )
   }
 }
