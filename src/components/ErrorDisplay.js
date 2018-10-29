@@ -1,5 +1,13 @@
 import React from 'react'
 
+export const ErrorDisplay = (props) => (
+  <div
+    className='m-3 p-3 results'
+  >
+    test
+  </div>
+)
+
 export const ErrorBox = (props) => (
   <div className='m-3 p-3 displayErrors'>
     <b>

@@ -1,5 +1,26 @@
 import React from 'react'
 import newbutton from '../img/newbutton.png'
+import { Slideshow } from './Slideshow'
+
+export const ValidationSlideshow = (props) => {
+  let slides = []
+  for(let validation of props.validations) {
+    // determine if the slide is a warning, error, or default slide
+    slides.push(
+      <ErrorSlide
+        count={validation.errors.length}
+        filename={validation.file.name}
+        uploadTime={validation.uploadTime}
+      />
+    )
+  }
+  return (
+    <Slideshow>
+      {slides}
+      <NewSlide />
+    </Slideshow>
+  )
+}
 
 export const WarningSlide = (props) => (
   <div className='m-3 p-3 shadow slide warningSlide text-center'>

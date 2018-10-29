@@ -7,11 +7,16 @@ import '../index.css'
 import Header from './Header'
 import Footer from './Footer'
 import ValidationDropzone from './ValidationDropzone'
-import { Slideshow } from './Slideshow'
-import { DefaultSlide, ErrorSlide, NewSlide, WarningSlide } from './ValidationSlides'
+import { ValidationSlideshow } from './ValidationSlides'
 
 // main component
 class ValidatorApp extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      validations: []
+    }
+  }
   render () {
     return (
       <div className='container-fluid'>
@@ -19,17 +24,11 @@ class ValidatorApp extends Component {
         <br />
         <div className='row'>
           <div className='container-fluid'>
-            <ValidationDropzone />
+            <ValidationDropzone validations={this.state.validations}/>
           </div>
         </div>
         <br />
-        <Slideshow>
-          <NewSlide />
-          <DefaultSlide />
-          <ErrorSlide />
-          <WarningSlide />
-          <div className='paddiv' />
-        </Slideshow>
+        <ValidationSlideshow validations={this.state.validations}/>
         <Footer />
       </div>
     )
