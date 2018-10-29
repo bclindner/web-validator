@@ -5,15 +5,6 @@ import { ErrorDisplay } from './ErrorDisplay'
 import { validate } from '../utils/api.js'
 
 class ValidationDropzone extends Component {
-  constructor (props) {
-    super(props)
-    this.onDragEnter = this.onDragEnter.bind(this)
-    this.onDrop = this.onDrop.bind(this)
-  }
-  onDragEnter (event) {
-    event.preventDefault()
-    console.log('drag enter')
-  }
   async onDrop (event) {
     event.persist()
     event.preventDefault()

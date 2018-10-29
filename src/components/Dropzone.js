@@ -1,14 +1,14 @@
 import React from 'react'
+function pd (event) {
+  event.preventDefault()
+}
 
 const Dropzone = (props) => (
   <div
-    onDragEnter={props.onDragEnter}
+    onDrag={pd}
+    onDragEnter={pd}
+    onDragOver={pd}
     onDrop={props.onDrop}
-    onDragOver={
-      (e) => {
-        return e.preventDefault()
-      }
-    }
   >
     {props.children}
   </div>

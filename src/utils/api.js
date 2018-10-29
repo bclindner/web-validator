@@ -12,6 +12,7 @@ export async function validate (file) {
       validation = await validateCSS(data)
       break
     default:
+      validation = false
       break
   }
   return validation
