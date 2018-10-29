@@ -7,6 +7,7 @@ import '../index.css'
 import Header from './Header'
 import Footer from './Footer'
 import Dropzone from './Dropzone'
+import ErrorDisplay from './ErrorDisplay'
 import DropzoneLandingPage from './DropzoneLandingPage'
 import { ValidationSlideshow } from './ValidationSlides'
 // API
@@ -68,7 +69,10 @@ class ValidatorApp extends Component {
           <br />
           <div className='row'>
             <div className='container-fluid'>
-                <DropzoneLandingPage />
+              {this.state.validations[this.state.selected] ?
+                  <ErrorDisplay validation={this.state.validations[this.state.selected]} /> :
+                  <DropzoneLandingPage />
+              }
             </div>
           </div>
           <br />
