@@ -28,7 +28,13 @@ class ValidatorApp extends Component {
     // do necessary event stuff
     event.persist()
     event.preventDefault()
-    for (let file of event.dataTransfer.files) {
+    let files = []
+    if('dataTransfer' in event){
+      files = event.dataTransfer.files
+    } else {
+      files = event.target.files
+    }
+    for (let file of files) {
       // validate the file
       const errors = await validate(file)
       if (errors !== false) {
@@ -58,7 +64,6 @@ class ValidatorApp extends Component {
     }
   }
   async selectValidation(key) {
-    console.log("setting validation to "+key)
     return this.setState({selected: key})
   }
   render () {
@@ -71,12 +76,14 @@ class ValidatorApp extends Component {
             <div className='container-fluid'>
               {this.state.validations[this.state.selected] ?
                   <ErrorDisplay validation={this.state.validations[this.state.selected]} /> :
-                  <DropzoneLandingPage />
+                  <DropzoneLandingPage
+                    validationFunction={this.onDrop}
+                  />
               }
             </div>
           </div>
           <br />
-          <ValidationSlideshow 
+          <ValidationSlideshow
             validations={this.state.validations}
             selected={this.state.selected}
             selectFunction={this.selectValidation}

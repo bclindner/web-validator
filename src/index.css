@@ -93,15 +93,16 @@ body{
   transform: scale(0.9);
 }
 
+/*
 .newslide {
   padding-top: 20px;
   padding-bottom: 20px;
   background-image: url("img/bottombg.png");
-  border: 3px solid black;
+  border: 3px dashed black;
   width:200px;
   height:150px;
-
 }
+*/
 
 .displayErrors {
   background-color: #ec8686;

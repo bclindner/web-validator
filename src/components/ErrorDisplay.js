@@ -10,11 +10,19 @@ export const ErrorDisplay = (props) => {
         return <WarningBox line={error.line} message={error.message} />
     }
   })
-  return (
-    <div className='m-3 p-3 results'>
-      {errors}
-    </div>
-  )
+  if (errors.length) {
+    return (
+      <div className='m-3 p-3 results'>
+        {errors}
+      </div>
+    )
+  } else {
+    return (
+      <div className='m-3 p-3 results d-flex'>
+        <h3 className='text-center'>No errors!</h3>
+      </div>
+    )
+  }
 }
 
 const ErrorBox = (props) => (
