@@ -12,15 +12,15 @@ self.__precacheManifest = [
     "url": "/web-validator/static/js/runtime~main.5952e72c.js"
   },
   {
-    "revision": "0429292c069e3fc38560",
-    "url": "/web-validator/static/js/main.0429292c.chunk.js"
+    "revision": "f04c2d2225cf0bc602ed",
+    "url": "/web-validator/static/js/main.f04c2d22.chunk.js"
   },
   {
     "revision": "132b10a67294f9289565",
     "url": "/web-validator/static/js/1.132b10a6.chunk.js"
   },
   {
-    "revision": "0429292c069e3fc38560",
+    "revision": "f04c2d2225cf0bc602ed",
     "url": "/web-validator/static/css/main.14cb578a.chunk.css"
   },
   {
@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/web-validator/static/css/1.66cef6ff.chunk.css"
   },
   {
-    "revision": "bdf2af1dc0d82c0710a3de8bdd02b482",
+    "revision": "36f3a977e7c4a8124d3d7c2fb8bfbe6a",
     "url": "/web-validator/index.html"
   }
 ];
