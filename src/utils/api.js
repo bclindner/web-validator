@@ -26,6 +26,7 @@ export async function validateHTML (codeToValidate) {
     headers: {
       'Content-Type': 'text/html'
     },
+    mode: 'cors',
     body: codeToValidate
   })
   const json = await resp.json()
@@ -40,7 +41,10 @@ export async function validateHTML (codeToValidate) {
   return messages
 }
 export async function validateCSS (codeToValidate) {
-  const resp = await window.fetch(config.css.endpoint + '?profile=css3&output=soap12&text=' + encodeURIComponent(codeToValidate))
+  const resp = await window.fetch(config.css.endpoint + '?profile=css3&output=soap12&text=' + encodeURIComponent(codeToValidate), {
+    credentials: 'omit',
+    mode: 'cors'
+  })
   const text = await resp.text()
   const parser = new window.DOMParser()
   const xml = parser.parseFromString(text, 'application/xml')

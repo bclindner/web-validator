@@ -38,6 +38,7 @@ export class ValidationSlideshow extends Component {
           data_key={-1}
           selected={this.props.selected === -1}
         />
+        <div id='paddiv' />
       </Slideshow>
     )
   }
