@@ -39,6 +39,13 @@ export class ValidationSlideshow extends Component {
           selected={this.props.selected === -1}
         />
         <div id='paddiv' />
+        <div style={{
+          display: 'relative',
+          top: 0,
+          right: 0
+        }}>
+          <h1>reset</h1>
+        </div>
       </Slideshow>
     )
   }
