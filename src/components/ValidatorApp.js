@@ -41,10 +41,10 @@ class ValidatorApp extends Component {
         // determine if this is an errored, warning, or ok validation
         let type = 'ok'
         for (let error of errors) {
-          if (error.type === 'error') {
+          if (error.type.includes('error')) {
             type = 'error'
             break
-          } else if (error.type === 'warning') {
+          } else if (error.type.includes('warning')) {
             type = 'warning'
             continue
           }

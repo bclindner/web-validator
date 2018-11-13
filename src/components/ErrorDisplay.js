@@ -1,13 +1,15 @@
 import React from 'react'
 
 export const ErrorDisplay = (props) => {
-  let errors = props.validation.errors.map((error) => {
+  let errors = props.validation.errors.map((error, key) => {
     switch (error.type) {
       case 'error':
-        return <ErrorBox line={error.line} message={error.message} />
+      case 'parse-error':
+      case 'value-error':
+        return <ErrorBox line={error.line} message={error.message} key={key} />
       case 'warning':
       default:
-        return <WarningBox line={error.line} message={error.message} />
+        return <WarningBox line={error.line} message={error.message} key={key} />
     }
   })
   if (errors.length) {
