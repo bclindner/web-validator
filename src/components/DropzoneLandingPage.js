@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 
+/**
+ * Landing page for the dropzone.
+ * Essentially a "new validation" box - simply instructs the user to drag or click to upload files.
+ */
 class DropzoneLandingPage extends Component {
   constructor (props) {
     super(props)

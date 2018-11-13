@@ -1,5 +1,8 @@
 import React from 'react'
 
+/**
+ * Div containing all the errors passed to the "validation" prop.
+ */
 export const ErrorDisplay = (props) => {
   let errors = props.validation.errors.map((error, key) => {
     switch (error.type) {
@@ -27,6 +30,10 @@ export const ErrorDisplay = (props) => {
   }
 }
 
+/**
+ * Box to display an error in the main window.
+ * Mostly for use by ErrorDisplay.
+ */
 const ErrorBox = (props) => (
   <div className='m-3 p-3 displayErrors'>
     <b>
@@ -38,6 +45,10 @@ const ErrorBox = (props) => (
   </div>
 
 )
+/**
+ * Box to display a warning in the main window.
+ * Mostly for use by ErrorDisplay.
+ */
 const WarningBox = (props) => (
   <div className='m-3 p-3 displayWarnings'>
     <b>

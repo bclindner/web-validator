@@ -13,8 +13,14 @@ import { ValidationSlideshow } from './ValidationSlides'
 // API
 import { validate } from '../utils/api.js'
 
-// main component
+/**
+ * Top-level component for the validator.
+ * Contains the business code for validating files.
+ */
 class ValidatorApp extends Component {
+  /**
+   * Creates a new ValidatorApp, initializing state as necessary.
+   */
   constructor (props) {
     super(props)
     this.selectValidation = this.selectValidation.bind(this)
@@ -24,6 +30,9 @@ class ValidatorApp extends Component {
       validations: []
     }
   }
+  /**
+   * Validates any files dropped on an onDrop event.
+   */
   async onDrop (event) {
     // do necessary event stuff
     event.persist()
@@ -63,6 +72,9 @@ class ValidatorApp extends Component {
       }
     }
   }
+  /**
+   * Sets the index of the validation being examined.
+   */
   async selectValidation(key) {
     return this.setState({selected: key})
   }

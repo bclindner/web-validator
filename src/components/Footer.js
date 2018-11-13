@@ -1,5 +1,8 @@
 import React from 'react'
 
+/**
+ * Simple informational footer using Bootstrap classes.
+ */
 const Footer = () => (
   <div className='row'>
     <div className='col footer'>

@@ -4,6 +4,9 @@ import DropzoneLandingPage from './DropzoneLandingPage'
 import { ErrorDisplay } from './ErrorDisplay'
 import { validate } from '../utils/api.js'
 
+/**
+ * A wrapper around Dropzone that validates the files dropped into it.
+ */
 class ValidationDropzone extends Component {
   async onDrop (event) {
     event.persist()
@@ -16,7 +19,6 @@ class ValidationDropzone extends Component {
         uploadTime: new Date().toLocaleTimeString()
       })
     }
-    console.log(this.props.validations)
   }
   render () {
     let dropzoneComponent = <DropzoneLandingPage />

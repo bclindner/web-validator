@@ -2,6 +2,12 @@ import React, { Component } from 'react'
 import newbutton from '../img/newbutton.png'
 import { Slideshow } from './Slideshow'
 
+/**
+ * Slideshow for the files validated.
+ * Contains a list of slides each corresponding to a file.
+ * Each slide should say the amount of errors or warnings available to it,
+ * as well as the filename and time uploaded.
+ */
 export class ValidationSlideshow extends Component {
   shouldComponentUpdate (newProps, newState) {
     return newProps.validations.length === this.props.validations.length ||
@@ -50,7 +56,10 @@ export class ValidationSlideshow extends Component {
     )
   }
 }
-
+/**
+ * Slide for a file that has warnings.
+ * Displays in yellow.
+ */
 export const WarningSlide = (props) => (
   <div
     className={'m-3 p-3 shadow slide warningSlide text-center' + (props.selected ? ' selected' : '')}
@@ -63,6 +72,10 @@ export const WarningSlide = (props) => (
   </div>
 )
 
+/**
+ * Slide for a file that has errors.
+ * Displays in red.
+ */
 export const ErrorSlide = (props) => (
   <div
     className={'m-3 p-3 shadow slide errorSlide text-center' + (props.selected ? ' selected' : '')}
@@ -75,6 +88,9 @@ export const ErrorSlide = (props) => (
   </div>
 )
 
+/**
+ * Slide for the "new file" box displayed at the end of the slideshow.
+ */
 export const NewSlide = (props) => (
   <div
     className={'m-3 p-3 shadow slide newslide text-center' + (props.selected ? ' selected' : '')}
@@ -84,6 +100,10 @@ export const NewSlide = (props) => (
   </div>
 )
 
+/**
+ * Slide for a file without errors.
+ * Simple grey box with "0 Errors" in it.
+ */
 export const DefaultSlide = (props) => (
   <div
     className={'m-3 p-3 shadow slide defaultSlide text-center' + (props.selected ? ' selected' : '')}
