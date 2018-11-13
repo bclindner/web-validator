@@ -1,6 +1,11 @@
 import config from './config.json'
 
-// Main validator function
+/**
+ * Validates a File object, if it is a CSS or HTML file.
+ * @async
+ * @param {File} file - The file to attempt to validate.
+ * @returns {Promise<Object>} - Object containing errors, each with message, line, and type properties.
+ */
 export async function validate (file) {
   const data = await readFile(file)
   let validation = 'invalid'
@@ -18,7 +23,12 @@ export async function validate (file) {
   return validation
 }
 
-// Validator functions
+/**
+ * Validates an HTML5 string. Mostly for use by the validate() function.
+ * @async
+ * @param {string} codeToValidate - HTML code to validate.
+ * @returns {Promise<Object>} - Object containing errors, each with message, line, and type properties.
+ */
 export async function validateHTML (codeToValidate) {
   const resp = await window.fetch(config.html.endpoint, {
     method: 'POST',
@@ -40,6 +50,12 @@ export async function validateHTML (codeToValidate) {
   }
   return messages
 }
+/**
+ * Validates a CSS string.
+ * @async
+ * @param {string} codeToValidate - CSS code to validate. Mostly for use by the validate() function.
+ * @returns {Promise<Object>} - Object containing errors, each with message, line, and type properties.
+ */
 export async function validateCSS (codeToValidate) {
   const resp = await window.fetch(config.css.endpoint + '?profile=css3&output=soap12&text=' + encodeURIComponent(codeToValidate), {
     credentials: 'omit',
@@ -60,7 +76,11 @@ export async function validateCSS (codeToValidate) {
   return messages
 }
 
-// hate this
+/*
+ * Helper function that wraps the FileReader interface into a Promise.
+ * @param {File} file - File to read to a string.
+ * @returns {Promise|string} - Promise which resolves to the file string.
+ */
 export async function readFile (file) {
   return new Promise((resolve, reject) => {
     let reader = new window.FileReader()
