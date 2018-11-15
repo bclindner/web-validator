@@ -50,7 +50,6 @@ export class ValidationSlideshow extends Component {
           top: 0,
           right: 0
         }}>
-          <h1>reset</h1>
         </div>
       </Slideshow>
     )
